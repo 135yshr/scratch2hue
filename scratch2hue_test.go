@@ -9,9 +9,9 @@ func TestScaratch2Hue(t *testing.T) {
 	Describe(t, "Scratch2Hue TestCase", func() {
 		Context("connect to hue", func() {
 			It("create new conneciton.", func() {
-				actual, err := NewConnection("localhost")
-				Expect(err).To(NotExist)
+				actual := NewConnection("localhost")
 				Expect(actual).To(Exist)
+				Expect(actual.bridge).To(Exist)
 			})
 		})
 	})
