@@ -1,7 +1,6 @@
 package scratch2hue
 
 import (
-	"fmt"
 	scratch "github.com/135yshr/scratchgo"
 	"github.com/savaki/go.hue"
 )
