@@ -20,7 +20,10 @@ func main() {
 	}
 
 	conn, err := scratch.NewDefaultConnect()
-	errorToExit("connect to scratch.", err)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 
 	hue := s2hue.NewConnection(ipaddr)
 	for {
@@ -29,7 +32,9 @@ func main() {
 			fmt.Println(err)
 			continue
 		}
-		hue.Anction(msg)
+		if err = hue.Anction(msg); err != nil {
+			fmt.Println(err)
+		}
 	}
 
 	os.Exit(0)
@@ -37,12 +42,4 @@ func main() {
 
 func init() {
 	flag.StringVar(&ipaddr, "ip", "", "bridge ip address.")
-}
-
-func errorToExit(message string, err error) {
-	if err != nil {
-		fmt.Println(message)
-		fmt.Println(err)
-		os.Exit(1)
-	}
 }
