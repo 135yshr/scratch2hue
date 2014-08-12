@@ -6,12 +6,15 @@ _library for manipulating the hue through the scratch._
 ### Go
 Refer to [golang.org](http://golang.org/doc/install)
 
-### Scratchgo
-Refer to [github](http://github.com/135yshr/scratchgo)
+### gom
+Refer to [gom](https://github.com/mattn/gom)
 
 ### scratch2hue
 ```bash
-go get github.com/135yshr/scratch2hue
+$ go get github.com/135yshr/scratch2hue
+$ gom install
+$ cd sample
+$ go build -o scratch2hue
 ```
 
 ## How to use
@@ -22,7 +25,7 @@ go get github.com/135yshr/scratch2hue
 
 ### command to start the scratch2hue
 ```bash
-scratch2hue -ip <bridge ip address>
+$ ./scratch2hue -ip <bridge ip address>
 ```
 
 ## License
