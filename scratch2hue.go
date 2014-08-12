@@ -18,15 +18,14 @@ type HueConnection struct {
 }
 
 func NewConnection(ipaddr string) *HueConnection {
-	bridge := hue.NewBridge(ipaddr, "scratch_dev")
+	bridge := hue.NewBridge(ipaddr, "scratchdev")
 	var state hue.SetLightState
 	return &HueConnection{bridge: bridge, state: state}
 }
 
-func (self *HueConnection) Anction(msg *scratch.Message) {
+func (self *HueConnection) Anction(msg *scratch.Message) error {
 	action := self.create_action_type(msg.Type)
-	err := action(msg)
-	errorToPrintConsole(err)
+	return action(msg)
 }
 
 func (self *HueConnection) create_action_type(message_type string) func(msg *scratch.Message) error {
@@ -155,10 +154,4 @@ func (self *HueConnection) broadcast_light_all_off() error {
 		}
 	}
 	return nil
-}
-
-func errorToPrintConsole(err error) {
-	if err != nil {
-		fmt.Println(err)
-	}
 }
