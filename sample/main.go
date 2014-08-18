@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
+	s2hue "github.com/135yshr/scratch2hue"
 	scratch "github.com/135yshr/scratchgo"
 	"os"
-	s2hue "scratch2hue"
 )
 
 var ipaddr string
@@ -32,7 +32,7 @@ func main() {
 			fmt.Println(err)
 			continue
 		}
-		if err = hue.Anction(msg); err != nil {
+		if err = hue.Action(msg); err != nil {
 			fmt.Println(err)
 		}
 	}
