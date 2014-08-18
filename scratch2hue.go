@@ -22,7 +22,7 @@ func NewConnection(ipaddr string) *HueConnection {
 	return &HueConnection{bridge: bridge, state: state}
 }
 
-func (self *HueConnection) Anction(msg *scratch.Message) error {
+func (self *HueConnection) Action(msg *scratch.Message) error {
 	action := self.create_action_type(msg.Type)
 	return action(msg)
 }
