@@ -30,3 +30,8 @@ $ ./scratch2hue -ip <bridge ip address>
 
 ## License
 MIT:https://github.com/135yshr/scratch2hue/blob/master/LICENSE
+
+## Revision History
+### beta_1.1
+* changed of function name from scratch2hue.Anction to scratch2hue.Action.
+* changed of import from "scratch2hue" to "github.com/135yshr/scratch2hue"
