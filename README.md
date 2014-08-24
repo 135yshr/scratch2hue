@@ -32,6 +32,10 @@ $ ./scratch2hue -ip <bridge ip address>
 MIT:https://github.com/135yshr/scratch2hue/blob/master/LICENSE
 
 ## Revision History
+
+### beta_1.2
+* changed use hue's api from savaki/go.hue to 135yshr/go.hue
+
 ### beta_1.1
 * changed of function name from scratch2hue.Anction to scratch2hue.Action.
 * changed of import from "scratch2hue" to "github.com/135yshr/scratch2hue"
