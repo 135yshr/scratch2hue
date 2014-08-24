@@ -1,8 +1,8 @@
 package scratch2hue
 
 import (
+	"github.com/135yshr/go.hue"
 	scratch "github.com/135yshr/scratchgo"
-	"github.com/savaki/go.hue"
 )
 
 const (
